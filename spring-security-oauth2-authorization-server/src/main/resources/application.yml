@@ -1,0 +1,20 @@
+server:
+  port: 5000
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: >-
+      jdbc:mysql://localhost:3307/testSystem?useUnicode=true
+      &characterEncoding=utf8
+      &useSSL=false
+      &useLegacyDatetimeCode=false
+      &serverTimezone=GMT%2B8
+    username: root
+    password: root
+  security:
+    user:
+      name: liyi
+      password: liyi
