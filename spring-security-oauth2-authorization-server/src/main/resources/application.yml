@@ -1,6 +1,7 @@
 server:
   port: 5000
 spring:
+  # clientService 一定会注入内存那个，要使用JDBC那个覆盖他
   main:
     allow-bean-definition-overriding: true
   datasource:
