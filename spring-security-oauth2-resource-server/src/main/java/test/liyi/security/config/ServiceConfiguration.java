@@ -25,8 +25,8 @@ public class ServiceConfiguration {
     @Bean
     public ResourceServerTokenServices resourceServerTokenServices() {
         RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
-        remoteTokenServices.setClientId("liyi.com");
-        remoteTokenServices.setClientSecret("liyi");
+        remoteTokenServices.setClientId("resources.server");
+        remoteTokenServices.setClientSecret("resources");
         remoteTokenServices.setCheckTokenEndpointUrl("http://127.0.0.1:5000/oauth/check_token");
         return remoteTokenServices;
     }

@@ -37,7 +37,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         super.configure(resources);
         resources.tokenServices(resourceServerTokenServices);
-        resources.resourceId("1");
+        resources.resourceId("resources.server");
     }
 
 }
