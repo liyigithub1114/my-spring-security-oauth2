@@ -6,10 +6,14 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
+//1. org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize
+//2. org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken
+//3. org.springframework.security.oauth2.provider.token.AbstractTokenGranter.grant
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
@@ -38,6 +42,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         endpoints.accessTokenConverter(jwtAccessTokenConverter);
         endpoints.authenticationManager(authenticationManager);
         endpoints.setClientDetailsService(clientDetailsService);
+    }
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        super.configure(security);
+        security.checkTokenAccess("isAuthenticated()");
     }
 
 }

@@ -12,3 +12,8 @@ spring:
       &serverTimezone=GMT%2B8
     username: root
     password: root
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://127.0.0.1:5000/.well-known/jwks.json
