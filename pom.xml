@@ -29,7 +29,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <spring-boot-start-parent.version>2.3.1.RELEASE</spring-boot-start-parent.version>
-    <mysql.version>8.0.16</mysql.version>
+    <mysql.version>8.0.28</mysql.version>
     <javax-jaxb.version>2.3.3</javax-jaxb.version>
     <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
     <nimbus-jose-jwt.version>8.19</nimbus-jose-jwt.version>
